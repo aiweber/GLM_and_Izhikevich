@@ -22,5 +22,6 @@ To install the code,
 
 2. Izhikevich, E. M.  **Simple model of spiking neurons**. *IEEE Trans Neural Netw*, 2003 (14): 1569-1572.
 
-3. Izhikevich, E. M.  **Which model to use for cortical spiking neurons?**,  *IEEE Trans Neural
+3. Izhikevich, E. M.  **Which model to use for cortical spiking
+   neurons?**  *IEEE Trans Neural
    Netw* 2004(15): 1063-1070. 
