@@ -24,4 +24,4 @@ To install the code,
 
 3. Izhikevich, E. M.  **Which model to use for cortical spiking
    neurons?**  *IEEE Trans Neural
-   Netw* 2004(15): 1063-1070. 
+   Netw* 2004 (15): 1063-1070. 
