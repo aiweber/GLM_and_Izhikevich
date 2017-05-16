@@ -1,4 +1,4 @@
-function [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,softRect,plotFlag,maxIter,tolFun,L2pen)
+function [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,prs,softRect,plotFlag,maxIter,tolFun,L2pen)
 % [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,softRect,plotFlag,maxIter,tolFun,L2pen)
 %
 %  This code fits a Poisson GLM to given data, using basis vectors to
@@ -19,6 +19,7 @@ function [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,softRe
 %       ihbasprs.hpeaks: peak location for first and last vectors
 %       ihbasprs.b: how nonlinear to make spacings (larger -> more linear)
 %       ihbasprs.absref: absolute refractory period, in ms
+%   prs: vector to initialize fit parameters
 %   softRect: 0 uses exponential nonlinearity; 1 uses soft-rectifying nonlinearity
 %   plotFlag: 0 or 1, plot simulated data
 %   maxIter: maximum number of iterations for fitting
@@ -64,6 +65,10 @@ if ~exist('ihbasprs','var') || isempty(ihbasprs)
     ihbasprs.absref = 0; % absolute refractory period, in ms
 end
 
+if ~exist('prs','var') || isempty(prs)
+    prs = zeros(nkbasis+nhbasis+1,1); % initialize parameters
+end
+
 if ~exist('softRect','var') || isempty(softRect)
     softRect = 0;
 end
@@ -104,7 +109,6 @@ nkbasis = size(kbasis,2); % number of basis functions for k
 nhbasis = size(hbasis,2); % number of basis functions for h
 
 %%
-prs = zeros(nkbasis+nhbasis+1,1); % initialize parameters
 
 xconvki = zeros(size(y,1),nkbasis);
 yconvhi = zeros(size(y,1),nhbasis);

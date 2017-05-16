@@ -81,7 +81,7 @@ maxIter = 1000;  % max number of iterations for fitting, also used for maximum n
 tolFun = 1e-8;   % function tolerance for fitting
 L2pen = 0;       % penalty on L2-norm of parameter coefficients
 
-[k h dc prs kbasis hbasis] = fit_glm(I,spikes,dt,nkt,kbasprs,ihbasprs,softRect,plotFlag,maxIter,tolFun,L2pen);
+[k h dc prs kbasis hbasis] = fit_glm(I,spikes,dt,nkt,kbasprs,ihbasprs,[],softRect,plotFlag,maxIter,tolFun,L2pen);
 
 % save
 if saveFlag
