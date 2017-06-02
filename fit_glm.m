@@ -82,7 +82,7 @@ if ~exist('maxIter','var') || isempty(maxIter)
 end
 
 if ~exist('tolFun','var') || isempty(tolFun)
-    maxIter = 1e-8;
+    tolFun = 1e-8;
 end
 
 if ~exist('L2pen','var') || isempty(L2pen)
@@ -124,7 +124,7 @@ end
 %% minimization
 
 warning('off','optim:fminunc:SwitchingMethod')
-opts = optimset('gradobj','on','hessian','on','display','iter','maxiter',maxIter,'maxfunevals',maxIter,'tolfun',tolFun);
+opts = optimset('gradobj','on','hessian','on','display','iter','maxiter',maxIter,'maxfunevals',maxIter,'tolfun',tolFun,'tolX',tolFun);
 if softRect
     NL = @logexp1;
     fneglogli = @(prs) negloglike_glm_basis_softRect(prs,NL,xconvki,yconvhi,y,1,refreshRate);
