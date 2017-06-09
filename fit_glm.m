@@ -65,6 +65,7 @@ if ~exist('ihbasprs','var') || isempty(ihbasprs)
     ihbasprs.absref = 0; % absolute refractory period, in ms
 end
 
+nkbasis = size(
 if ~exist('prs','var') || isempty(prs)
     prs = zeros(nkbasis+nhbasis+1,1); % initialize parameters
 end
