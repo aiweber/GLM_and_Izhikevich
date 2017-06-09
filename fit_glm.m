@@ -65,11 +65,6 @@ if ~exist('ihbasprs','var') || isempty(ihbasprs)
     ihbasprs.absref = 0; % absolute refractory period, in ms
 end
 
-nkbasis = size(
-if ~exist('prs','var') || isempty(prs)
-    prs = zeros(nkbasis+nhbasis+1,1); % initialize parameters
-end
-
 if ~exist('softRect','var') || isempty(softRect)
     softRect = 0;
 end
@@ -108,6 +103,10 @@ hbasis = [zeros(1,ihbasprs.ncols); hbasis]; % enforce causality: post-spike filt
 
 nkbasis = size(kbasis,2); % number of basis functions for k
 nhbasis = size(hbasis,2); % number of basis functions for h
+
+if ~exist('prs','var') || isempty(prs)
+    prs = zeros(nkbasis+nhbasis+1,1); % initialize parameters
+end
 
 %%
 
