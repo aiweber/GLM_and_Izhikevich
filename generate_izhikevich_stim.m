@@ -1,7 +1,7 @@
 function [I, dt] = generate_izhikevich_stim(cellType,T)
 %  [I dt] = generate_izhikevich_stim(cellType,T)
 %
-%  This code generates a stimulus appropriate to to the specified type of
+%  This code generates a stimulus appropriate to the specified type of
 %  Izhikevich neuron.  Defaults for each cell type are those used in
 %  "Capturing the dynamical repertoire of single neurons with GLMs" (Weber
 %  & Pillow 2017).  This code is intended to be used together with
@@ -72,7 +72,7 @@ pars = [14       0.1 ;    % 1. tonic spiking
         10       0.1 ;    % 5. mixed mode
         20       0.1 ;    % 6. spike frequency adaptation
         25       0.1 ;    % 7. Class 1
-        .4       0.1 ;    % 8. Class 2
+        .5       0.1 ;    % 8. Class 2
         3.49     0.1 ;    % 9. spike latency
         0        1   ;    % 10. subthreshold oscillations
         .3       0.5 ;    % 11. resonator

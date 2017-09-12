@@ -75,7 +75,7 @@ pars = [0.02      0.2     -65     6;      % 1. tonic spiking
         0.02      0.2     -50     2;      % 3. tonic bursting
         0.02      0.25    -55     0.05;   % 4. phasic bursting
         0.02      0.2     -55     4;      % 5. mixed mode
-        0.01      0.2     -65     8;      % 6. spike frequency adaptation
+        0.01      0.2     -65     5;      % 6. spike frequency adaptation
         0.02      -0.1    -55     6;      % 7. Class 1
         0.2       0.26    -65     0;      % 8. Class 2
         0.02      0.2     -65     6;      % 9. spike latency
@@ -166,7 +166,6 @@ if plotFlag
     
     warning('off','MATLAB:hg:ColorSpec_None')
     figure;
-    set(gcf,'color','none')
     
     subplot(2,1,1)
     plot(t,I)
