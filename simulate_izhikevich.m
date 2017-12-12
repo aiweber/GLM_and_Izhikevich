@@ -1,4 +1,4 @@
-function [v u spikes cid] = simulate_izhikevich(cellType,I,dt,jitter,plotFlag,saveFlag,fid)
+function [v, u, spikes, cid] = simulate_izhikevich(cellType,I,dt,jitter,plotFlag,saveFlag,fid)
 % [v u spikes cid] = simulate_izhikevich(cellType,I,dt,jitter,plotFlag,saveFlag,fid)
 %
 %  This code generates data from an Izhikevich neuron of a type specified
@@ -129,6 +129,13 @@ else
     u(1) = -14; 
 end
 
+% Izhikevich model doesn't show this kind of bistability, so simulate
+% responses using first form of bistability
+Iplot = I;
+if cellType == 21
+    I = abs(I+65)-65;
+end
+
 
 %% run model
 
@@ -148,6 +155,7 @@ for tt = 1:length(I)-1
 end
 
 
+
 %% if jitter ~= 0, add noise to spike times
 if jitter  % add noise to spike times
     spikeIdx = find(spikes);
@@ -161,7 +169,7 @@ end
 %% plot results
 
 if plotFlag
-    
+    I = Iplot;
     sTimes = t(logical(spikes));
     
     warning('off','MATLAB:hg:ColorSpec_None')
@@ -170,7 +178,7 @@ if plotFlag
     subplot(2,1,1)
     plot(t,I)
     ylabel('current')
-    ylim([min(I)-.05*max(I) 1.05*max(I)])
+    ylim([min(I)-.05*abs(min(I)) max(I)+.05*abs(max(I))])
     xlim([dt T])
     box off
     title('stimulus')

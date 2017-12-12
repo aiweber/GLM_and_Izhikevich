@@ -124,7 +124,7 @@ end
 %% minimization
 
 warning('off','optim:fminunc:SwitchingMethod')
-opts = optimset('gradobj','on','hessian','on','display','iter','maxiter',maxIter,'maxfunevals',maxIter,'tolfun',tolFun,'tolX',tolFun);
+opts = optimoptions('fminunc','algorithm','trust-region','gradobj','on','hessian','on','display','iter','maxiter',maxIter,'maxfunevals',maxIter,'tolfun',tolFun,'tolX',tolFun);
 if softRect
     NL = @logexp1;
     fneglogli = @(prs) negloglike_glm_basis_softRect(prs,NL,xconvki,yconvhi,y,1,refreshRate);

@@ -193,9 +193,6 @@ elseif sum([16 21] == cellType)
             
         end
     end
-    if cellType == 21 % note: can't get this behavior out of Izhikevich neuron without very fine tuning
-        I = abs(I+65)-65;
-    end
     
 elseif sum([18] == cellType)
     baseline = -70;
