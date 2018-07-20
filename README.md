@@ -10,9 +10,11 @@ behaviors using the Izhikevich neuron model [2,3].
 
 
 
-To get started, open “demo_glm_fitting_and_simulation.m”.
 
-“fit_glm.m” is the main function used for fitting a Poisson GLM to data.
+To get started, open `demo_glm_fitting_and_simulation.m`.
+
+`fit_glm.m` is the main function used to fit a Poisson GLM to data.
+
 
 
 
