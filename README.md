@@ -6,7 +6,14 @@ Associated with publication ([Weber & Pillow
 1. generating simulated neural responses that reproduce a variety of dynamic spiking
 behaviors using the Izhikevich neuron model [2,3].
 
-2. fitting a Poisson GLM to neural responses.
+2. fitting a Poisson generalized linear model (GLM) to neural responses.
+
+
+
+To get started, open “demo_glm_fitting_and_simulation.m”.
+
+“fit_glm.m” is the main function used for fitting a Poisson GLM to data.
+
 
 
 ### References
