@@ -1,5 +1,5 @@
 function [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,prs,softRect,plotFlag,maxIter,tolFun,L2pen)
-% [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,softRect,plotFlag,maxIter,tolFun,L2pen)
+% [k h dc prs kbasis hbasis] = fit_glm(x,y,dt,nkt,kbasprs,ihbasprs,prs,softRect,plotFlag,maxIter,tolFun,L2pen)
 %
 %  This code fits a Poisson GLM to given data, using basis vectors to
 %  characterize the stimulus and post-spike filters.

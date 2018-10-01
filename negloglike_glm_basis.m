@@ -64,7 +64,7 @@ if nargout>2
     prsMat = [xconvki yconvhi ones(size(xconvki,1),1)];
     for pr1 = 1:length(prs)
         for pr2 = pr1:length(prs)
-            H(pr1,pr2) = dt/refreshRate*sum(prsMat(:,pr1).*prsMat(:,pr2).*lambda) + L2pen*2;
+            H(pr1,pr2) = dt/refreshRate*sum(prsMat(:,pr1).*prsMat(:,pr2).*lambda) + L2pen*2*(pr1==pr2);
             H(pr2,pr1) = H(pr1,pr2);
         end
     end
