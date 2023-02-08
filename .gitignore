@@ -3,3 +3,8 @@
 
 # OS X stores
 *.DS_Store
+
+# directories with fitted data
+glm_fits/
+glm_sim_data/
+izhikevich_data/
